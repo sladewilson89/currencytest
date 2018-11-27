@@ -22,12 +22,12 @@ if [ ! -d "currency_train_output" ]; then
 	mkdir currency_train_output;  
 fi
 
-for f in $1/ten/*.jpg; do echo $f;done > train_files/ten.txt
-for f in $1/twenty/*.jpg; do echo $f;done > train_files/twenty.txt
-for f in $1/fifty/*.jpg; do echo $f;done > train_files/fifty.txt
-for f in $1/hundred/*.jpg; do echo $f;done > train_files/hundred.txt
-for f in $1/fivehundred/*.jpg; do echo $f;done > train_files/fivehundred.txt
-for f in $1/thousand/*.jpg; do echo $f;done > train_files/thousand.txt
+for f in $1/ten/*.JPG; do echo $f;done > train_files/ten.txt
+for f in $1/twenty/*.JPG; do echo $f;done > train_files/twenty.txt
+for f in $1/fifty/*.JPG; do echo $f;done > train_files/fifty.txt
+for f in $1/hundred/*.JPG; do echo $f;done > train_files/hundred.txt
+for f in $1/fivehundred/*.JPG; do echo $f;done > train_files/fivehundred.txt
+for f in $1/thousand/*.JPG; do echo $f;done > train_files/thousand.txt
 
 g++ `pkg-config --cflags --libs opencv` currency.cpp -o currency-train -lopencv_flann -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_objdetect -lopencv_xfeatures2d -lopencv_features2d  -lopencv_imgcodecs;
 
